@@ -191,7 +191,6 @@ export default defineComponent({
 
     //Form submit function
     const onSubmitLogin = async (values: any) => {
-      values = values as User;
       // Clear existing errors
       store.logout();
 
@@ -205,7 +204,6 @@ export default defineComponent({
       // Send login request
       await store.login(values);
       const error = Object.values(store.errors);
-
       if (error.length === 0) {
         Swal.fire({
           text: "You have successfully logged in!",
